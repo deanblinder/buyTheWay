@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6d932e09df0aa5754dc674d1134c6034",
+    "revision": "223fef069c7fd97440d7d736b62aad48",
     "url": "/buyTheWay/index.html"
   },
   {
-    "revision": "8e62936fdb66549f86ad",
+    "revision": "d3188342b6fbe9abcd22",
     "url": "/buyTheWay/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/buyTheWay/static/js/2.558406de.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8e62936fdb66549f86ad",
-    "url": "/buyTheWay/static/js/main.3074003e.chunk.js"
+    "revision": "d3188342b6fbe9abcd22",
+    "url": "/buyTheWay/static/js/main.ad87f593.chunk.js"
   },
   {
     "revision": "f4f33e148673f228d7a6",
