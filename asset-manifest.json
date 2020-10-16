@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/buyTheWay/static/css/main.5f361e03.chunk.css",
+    "main.js": "/buyTheWay/static/js/main.3074003e.chunk.js",
+    "main.js.map": "/buyTheWay/static/js/main.3074003e.chunk.js.map",
+    "runtime-main.js": "/buyTheWay/static/js/runtime-main.a4765aec.js",
+    "runtime-main.js.map": "/buyTheWay/static/js/runtime-main.a4765aec.js.map",
+    "static/js/2.558406de.chunk.js": "/buyTheWay/static/js/2.558406de.chunk.js",
+    "static/js/2.558406de.chunk.js.map": "/buyTheWay/static/js/2.558406de.chunk.js.map",
+    "index.html": "/buyTheWay/index.html",
+    "precache-manifest.4a48b03c60144bb98104d092d069b78a.js": "/buyTheWay/precache-manifest.4a48b03c60144bb98104d092d069b78a.js",
+    "service-worker.js": "/buyTheWay/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/buyTheWay/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.558406de.chunk.js.LICENSE.txt": "/buyTheWay/static/js/2.558406de.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/buyTheWay/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a4765aec.js",
+    "static/js/2.558406de.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.3074003e.chunk.js"
+  ]
+}
