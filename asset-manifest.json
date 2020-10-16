@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/buyTheWay/static/css/main.71cf9661.chunk.css",
-    "main.js": "/buyTheWay/static/js/main.b91a34fd.chunk.js",
-    "main.js.map": "/buyTheWay/static/js/main.b91a34fd.chunk.js.map",
+    "main.js": "/buyTheWay/static/js/main.39be957b.chunk.js",
+    "main.js.map": "/buyTheWay/static/js/main.39be957b.chunk.js.map",
     "runtime-main.js": "/buyTheWay/static/js/runtime-main.a4765aec.js",
     "runtime-main.js.map": "/buyTheWay/static/js/runtime-main.a4765aec.js.map",
     "static/js/2.1d5b68cd.chunk.js": "/buyTheWay/static/js/2.1d5b68cd.chunk.js",
     "static/js/2.1d5b68cd.chunk.js.map": "/buyTheWay/static/js/2.1d5b68cd.chunk.js.map",
     "index.html": "/buyTheWay/index.html",
-    "precache-manifest.f5c1c52d1dafc4a21c558009c2529812.js": "/buyTheWay/precache-manifest.f5c1c52d1dafc4a21c558009c2529812.js",
+    "precache-manifest.fb341da7b0f6f0b9dff4b0e6a85b1794.js": "/buyTheWay/precache-manifest.fb341da7b0f6f0b9dff4b0e6a85b1794.js",
     "service-worker.js": "/buyTheWay/service-worker.js",
     "static/css/main.71cf9661.chunk.css.map": "/buyTheWay/static/css/main.71cf9661.chunk.css.map",
     "static/js/2.1d5b68cd.chunk.js.LICENSE.txt": "/buyTheWay/static/js/2.1d5b68cd.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.a4765aec.js",
     "static/js/2.1d5b68cd.chunk.js",
     "static/css/main.71cf9661.chunk.css",
-    "static/js/main.b91a34fd.chunk.js"
+    "static/js/main.39be957b.chunk.js"
   ]
 }
