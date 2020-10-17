@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8cc51082f0472f094a3b2c779260c9a1",
+    "revision": "e2ad84cb6429c3476e2be8835dda1b3d",
     "url": "/buyTheWay/index.html"
   },
   {
-    "revision": "d08ebef65b95da1a9275",
-    "url": "/buyTheWay/static/css/main.bf0f467c.chunk.css"
+    "revision": "6da4c5b448a2d79ef934",
+    "url": "/buyTheWay/static/css/main.f5797559.chunk.css"
   },
   {
-    "revision": "e89a9a0dd6faa1867f96",
-    "url": "/buyTheWay/static/js/2.60c849a2.chunk.js"
+    "revision": "0749796948fd178138c7",
+    "url": "/buyTheWay/static/js/2.b0fb6254.chunk.js"
   },
   {
     "revision": "c5c2335234c5c7f345d9db62db0bda01",
-    "url": "/buyTheWay/static/js/2.60c849a2.chunk.js.LICENSE.txt"
+    "url": "/buyTheWay/static/js/2.b0fb6254.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d08ebef65b95da1a9275",
-    "url": "/buyTheWay/static/js/main.a684dba2.chunk.js"
+    "revision": "6da4c5b448a2d79ef934",
+    "url": "/buyTheWay/static/js/main.b40b6e8a.chunk.js"
   },
   {
     "revision": "f4f33e148673f228d7a6",
