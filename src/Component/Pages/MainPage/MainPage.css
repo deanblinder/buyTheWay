@@ -1,0 +1,30 @@
+.Content{
+    width: 50%;
+    box-shadow: 0 2px 3px #ccc;
+    box-sizing: border-box;
+    margin: 40px auto;
+    height: 100%;
+
+}
+.Form{
+    box-sizing: border-box;
+    box-shadow: 0 2px 3px #ccc;
+    background-color: white;
+    height: 50%;
+}
+.Buttons{
+    /*box-shadow: 0 2px 3px #ccc;*/
+    /*box-sizing: border-box;*/
+    /*margin: auto;*/
+    /*width: 18%;*/
+}
+.Button {
+    margin-left: 30px;
+}
+.RegisterForm{
+    padding-top: 15%;
+
+}
+.Container{
+    height: 100%;
+}

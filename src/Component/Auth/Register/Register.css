@@ -1,0 +1,16 @@
+.RegisterForm1{
+    /*box-sizing: border-box;*/
+    /*box-shadow: 0 2px 3px #ccc;*/
+    width: 70%;
+    margin-left: 10%;
+
+}
+.Headline{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+.Buttonss{
+    margin-left: 5px;
+    margin-right: 5%;
+}
