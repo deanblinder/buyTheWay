@@ -18,7 +18,7 @@ class OrderForm extends Component{
         firstName:'',
         lastName:'',
         phoneNumber:'',
-        reason:'risk Group',
+        reason:'בידוד',
         items:[""],
         comment:'',
         // myLat:'',
@@ -116,7 +116,7 @@ class OrderForm extends Component{
                 //     myURL='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hiclipart.com%2Ffree-transparent-background-png-clipart-pfjjr&psig=AOvVaw0hO-Oim3nCrAKZksWdYL-D&ust=1603208330555000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjDk9D-wOwCFQAAAAAdAAAAABAE'
                 // }
                 let order={
-                    username:this.props.match.params.username,
+                    username:localStorage.getItem('username'),
                     firstName: this.state.firstName,
                     lastName: this.state.lastName,
                     phoneNumber:this.state.phoneNumber,
@@ -131,8 +131,11 @@ class OrderForm extends Component{
 
                 }
                 console.log(order)
+
                 axios.post("https://buy-the-way-a829f.firebaseio.com/orders.json",order).then()
-                this.props.history.push("/profilePage/"+this.props.match.params.username)
+                console.log(localStorage.getItem('username'))
+                 this.props.history.push("profilePage")
+
             })
         }
         else {
@@ -152,6 +155,7 @@ class OrderForm extends Component{
             }
             console.log(order)
             axios.post("https://buy-the-way-a829f.firebaseio.com/orders.json",order).then()
+            window.location.reload(false);
         }
 
 
@@ -175,6 +179,9 @@ class OrderForm extends Component{
     }
 
     render() {
+        const imgClick=()=>{
+            console.log("kdlsdlsdkl")
+        }
         console.log(this.state)
         return(
             <div className="OrderForm">
@@ -183,24 +190,27 @@ class OrderForm extends Component{
                         <Form.Label>שפ פרטי</Form.Label>
                         <Form.Control type="text"
                                       placeholder="שם פרטי"
-                                      onChange={(event)=>this.nameChangedHandler(event)}/>
+                                      onChange={(event)=>this.nameChangedHandler(event)}
+                                      style ={{textAlign:'right'}}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>שם משפחה</Form.Label>
                         <Form.Control type="text"
                                       placeholder="שם משפחה"
-                                      onChange={(event)=>this.lastNameChangedHandler(event)}/>
+                                      onChange={(event)=>this.lastNameChangedHandler(event)}
+                                      style ={{textAlign:'right'}}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>מספר טלון</Form.Label>
                         <Form.Control type="text"
                                       placeholder="מספר טלפון"
-                                      onChange={(event)=>this.phoneNumberChangedHandler(event)}/>
+                                      onChange={(event)=>this.phoneNumberChangedHandler(event)}
+                                      style ={{textAlign:'right'}}/>
                     </Form.Group>
                     <Form.Group controlId="exampleForm.SelectCustom">
                         <Form.Label>סיבה</Form.Label>
                         <Form.Control as="select" custom onChange={(event)=>this.reasonChangedHandler(event)}>
-                            <option>ביבוד</option>
+                            <option>בידוד</option>
                             <option>קבוצת סיכון</option>
                             <option>אחר..</option>
                         </Form.Control>

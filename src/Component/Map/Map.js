@@ -5,6 +5,8 @@ import React,{Component} from "react";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import icon from '../../assets/mapIcon.jpg'
 
+
+
 export class MapContainer extends Component {
     state = {
         markers: [
@@ -22,6 +24,7 @@ export class MapContainer extends Component {
         axios.get('https://buy-the-way-a829f.firebaseio.com/orders.json')
             .then(response=>{
                 let requests=[]
+                let flag=true
                 let index=0;
                 for(let key in response.data){
                     let request={
@@ -40,7 +43,6 @@ export class MapContainer extends Component {
                        }
                     requests.push(request)
                 }
-
                  this.setState({markers:requests})
             })
         axios.get("gs://buy-the-way-a829f.appspot.com")
@@ -48,12 +50,14 @@ export class MapContainer extends Component {
                 // console.log(response, 'photo')
             })
     }
-    viewFullOrder=(id)=>{
-        console.log(id)
+    markerClick=(marker)=>{
+            // console.log("yess")
+            this.setState({selectedMark: marker})
+            // console.log(this.state.selectedMark)
     }
-
     render() {
 
+        console.log(this.state.selectedMark, "selectedMArker")
         return (
             <div>
                 <div style={{backgroundColor:'white'}}>
@@ -61,7 +65,7 @@ export class MapContainer extends Component {
                 </div>
             <Map center={{lat: this.state.place.coordinates.lat,lng:this.state.place.coordinates.lng}} initialCenter={{lat: this.state.place.coordinates.lat, lng: this.state.place.coordinates.lng}} google={this.props.google} zoom={14}>
                 {this.state.markers.map((marker, i) => {
-                    console.log(localStorage.getItem('username'),marker.username)
+                    // console.log(localStorage.getItem('username'),marker.username)
                     return marker.username === localStorage.getItem('username') ?
                         <Marker
                             key={i}
@@ -69,16 +73,11 @@ export class MapContainer extends Component {
                                 lat: marker.lat,
                                 lng: marker.lng,
                             }}
-                            onClick={() => {
-                                console.log("yess")
-                                this.setState({selectedMark: marker})
-                                console.log(this.state.selectedMark)
-                            }}
+                            onClick={()=>this.markerClick(marker)}
                             icon={{
                                 url:icon,
-                                scaledSize: new window.google.maps.Size(25,35)
+                                scaledSize: new window.google.maps.Size(25,40)
                             }}
-
                         />
                         : <Marker
                             key={i}
@@ -86,11 +85,7 @@ export class MapContainer extends Component {
                                 lat: marker.lat,
                                 lng: marker.lng,
                             }}
-                            onClick={() => {
-                                console.log("yess")
-                                this.setState({selectedMark: marker})
-                                console.log(this.state.selectedMark)
-                            }}
+                            onClick={()=>this.markerClick(marker)}
                             // icon={{
                             //     url:icon,
                             //     scaledSize: new window.google.maps.Size(25,25)
@@ -101,13 +96,12 @@ export class MapContainer extends Component {
                     {this.state.selectedMark && (
                         <InfoWindow
                             onClose={() => {
-                                this.setState({selectedMark: null});
-                                console.log(this.state.selectedMark)
+                                 this.setState({selectedMark: null});
+                                // console.log(this.state.selectedMark)
                             }}
-
                             position={{
-                                lat: this.state.selectedMark.lat,
-                                lng: this.state.selectedMark.lng
+                                lat:( this.state.selectedMark.lat),
+                                lng: (this.state.selectedMark.lng)
                             }}
                             visible={true}
                         >
@@ -131,5 +125,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: ("AIzaSyBQG6-V9VanGvA9UmPpaoI9GQbDMtkRsWk")
+    apiKey: ("AIzaSyCjSsfCszZMbzuR6GWj_o4dEg0wWvaaB8o")
 })(MapContainer)

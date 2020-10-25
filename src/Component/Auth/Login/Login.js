@@ -67,10 +67,11 @@ class Login extends Component{
                     // <div className='Container'>
                     <div className='LoginForm' >
                         <h1 style={{textAlign:"center"}}>Login</h1>
-                        <Form>
-                            <Form.Group controlId="formBasicUsername">
+                        <Form >
+                            <Form.Group controlId="formBasicUsername" >
                                 <Form.Label>username</Form.Label>
-                                <Form.Control type="text"
+                                <Form.Control
+                                    type="text"
                                               placeholder="Enter username"
                                               value={this.state.username.value}
                                               onChange={(event)=>this.usernameChangedHandler(event)}/>

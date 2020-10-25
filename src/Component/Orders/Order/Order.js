@@ -1,19 +1,22 @@
 import React, {Component} from "react";
 import './Order.css'
-import {Button,Card} from 'react-bootstrap'
+import {Button,Card,Row,Col} from 'react-bootstrap'
 // import avatar from '../../../assets/avatar.jpg'
 import 'whatsapp-button/whatsapp-button.js';
-
+import faceBook from '../../../assets/facebook.jpg'
 import { render } from 'react-dom';
+import {Link} from "react-router-dom";
 
 
 class Order extends Component{
+        facebookClick=()=>{
+            console.log("ksjdksdk")
+        }
+        render() {
 
-    render() {
         let number=this.props.phoneNumber.slice(1)
         // console.log(number)
         let myPhoneNumber="https://wa.me/972"+number
-        console.log(myPhoneNumber)
         return(
             // <div className='Order'>
             //     <h1>Address: {this.props.address}</h1>
@@ -48,7 +51,7 @@ class Order extends Component{
                         <h6>כתובת:{this.props.address} </h6>
                         {/*<h6>phone:{this.props.phoneNumber}</h6>*/}
                         <Card.Text>
-                            <h6>{this.props.reason}:סיבה</h6>
+                            <h6>סיבה:{this.props.reason}</h6>
                             {/*<br/>*/}
                             <h6>:מצרכים</h6>
                             {
@@ -62,15 +65,24 @@ class Order extends Component{
                             }
                             <h6>:הערות</h6>{this.props.comment}
                             <br/>
-                            <whatsapp-button phone={myPhoneNumber} text="" label="Start Chat"></whatsapp-button>
+                            <div>
+                                <Row>
+                                    <Col>
+                                        <whatsapp-button style={{marginTop:'10%'}} phone={myPhoneNumber} text="" label="Start Chat"></whatsapp-button>
+                                    </Col>
+                                    <Col>
+                                        <img onClick={this.facebookClick} src={faceBook} style={{height:'100%',width:'120%'}} />
+                                    </Col>
+                                </Row>
+                            </div>
 
                         </Card.Text>
                     </Card.Body>
                 </Card>
             </div>
         )
-    }
 
+    }
 
 }
 // render(<Order />, document.getElementById('root'));

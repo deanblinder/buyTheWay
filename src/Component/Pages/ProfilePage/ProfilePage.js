@@ -24,11 +24,18 @@ class ProfilePage extends Component{
                         this.setState({hasRequest:true,image:orders[key].imageURL,order:orders[key]})
                     }
                 }
+
             })
     }
 
     goToOrderForm=()=>{
         this.props.history.push('/OrderForm')
+    }
+    updateUserOrder=()=>{
+        // firebase.database().ref('users/' + userId).set({
+        //     name:
+        //     profile_picture : imageUrl
+        // });
     }
     removeOrder=()=>{
         // let firebaseConfig = {
@@ -50,6 +57,7 @@ class ProfilePage extends Component{
         // userRef.remove()
     }
     render() {
+        // window.location.reload(true);
         console.log(localStorage)
         let button=null
         let button2=null
@@ -78,7 +86,7 @@ class ProfilePage extends Component{
                             <br/>
                             {/*<whatsapp-button phone={myPhoneNumber} text="" label="Start Chat"></whatsapp-button>*/}
                             <div style={{paddingLeft:'10%' ,float:'left'}}>
-                                <Button variant="primary">עריכה</Button>
+                                <Button variant="primary" onClick={this.updateUserOrder}>עריכה</Button>
                             </div>
                             <div style={{paddingLeft:'10%' ,float:'left'}}>
                                 <Button variant="primary">הסרה</Button>
