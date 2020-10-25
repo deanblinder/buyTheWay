@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.css": "/buyTheWay/static/css/main.d41f4f3c.chunk.css",
-    "main.js": "/buyTheWay/static/js/main.211a8926.chunk.js",
-    "main.js.map": "/buyTheWay/static/js/main.211a8926.chunk.js.map",
+    "main.css": "/buyTheWay/static/css/main.a920f749.chunk.css",
+    "main.js": "/buyTheWay/static/js/main.96ae2113.chunk.js",
+    "main.js.map": "/buyTheWay/static/js/main.96ae2113.chunk.js.map",
     "runtime-main.js": "/buyTheWay/static/js/runtime-main.a4765aec.js",
     "runtime-main.js.map": "/buyTheWay/static/js/runtime-main.a4765aec.js.map",
-    "static/js/2.6f60a2b8.chunk.js": "/buyTheWay/static/js/2.6f60a2b8.chunk.js",
-    "static/js/2.6f60a2b8.chunk.js.map": "/buyTheWay/static/js/2.6f60a2b8.chunk.js.map",
+    "static/css/2.d94d92f0.chunk.css": "/buyTheWay/static/css/2.d94d92f0.chunk.css",
+    "static/js/2.b0e923cb.chunk.js": "/buyTheWay/static/js/2.b0e923cb.chunk.js",
+    "static/js/2.b0e923cb.chunk.js.map": "/buyTheWay/static/js/2.b0e923cb.chunk.js.map",
     "index.html": "/buyTheWay/index.html",
-    "precache-manifest.81840478356248ca61d107b76d631884.js": "/buyTheWay/precache-manifest.81840478356248ca61d107b76d631884.js",
+    "precache-manifest.ae764411217f9d10785e71915f1fdf74.js": "/buyTheWay/precache-manifest.ae764411217f9d10785e71915f1fdf74.js",
     "service-worker.js": "/buyTheWay/service-worker.js",
-    "static/css/main.d41f4f3c.chunk.css.map": "/buyTheWay/static/css/main.d41f4f3c.chunk.css.map",
-    "static/js/2.6f60a2b8.chunk.js.LICENSE.txt": "/buyTheWay/static/js/2.6f60a2b8.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/buyTheWay/static/media/backGround.a12b6eff.jpg"
+    "static/css/2.d94d92f0.chunk.css.map": "/buyTheWay/static/css/2.d94d92f0.chunk.css.map",
+    "static/css/main.a920f749.chunk.css.map": "/buyTheWay/static/css/main.a920f749.chunk.css.map",
+    "static/js/2.b0e923cb.chunk.js.LICENSE.txt": "/buyTheWay/static/js/2.b0e923cb.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/buyTheWay/static/media/backGround.a12b6eff.jpg",
+    "static/media/mapIcon.jpg": "/buyTheWay/static/media/mapIcon.3cc2b029.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.a4765aec.js",
-    "static/js/2.6f60a2b8.chunk.js",
-    "static/css/main.d41f4f3c.chunk.css",
-    "static/js/main.211a8926.chunk.js"
+    "static/css/2.d94d92f0.chunk.css",
+    "static/js/2.b0e923cb.chunk.js",
+    "static/css/main.a920f749.chunk.css",
+    "static/js/main.96ae2113.chunk.js"
   ]
 }
