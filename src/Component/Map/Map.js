@@ -51,13 +51,21 @@ export class MapContainer extends Component {
             })
     }
     markerClick=(marker)=>{
-            // console.log("yess")
-            this.setState({selectedMark: marker})
+        this.setState({selectedMark: marker})
+        let copiedPlace={
+            ...this.state.place
+        }
+        console.log(marker, "marker")
+        console.log(copiedPlace.coordinates.lat,"copiesPlace")
+        console.log(marker.lat,"lat")
+        copiedPlace.coordinates.lng=marker.lng
+        copiedPlace.coordinates.lat=marker.lat
+        this.setState({place:copiedPlace})
             // console.log(this.state.selectedMark)
     }
     render() {
 
-        console.log(this.state.selectedMark, "selectedMArker")
+        // console.log(this.state.selectedMark, "selectedMArker")
         return (
             <div>
                 <div style={{backgroundColor:'white'}}>
