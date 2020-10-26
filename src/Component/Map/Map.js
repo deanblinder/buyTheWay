@@ -55,9 +55,9 @@ export class MapContainer extends Component {
         let copiedPlace={
             ...this.state.place
         }
-        console.log(marker, "marker")
-        console.log(copiedPlace.coordinates.lat,"copiesPlace")
-        console.log(marker.lat,"lat")
+        // console.log(marker, "marker")
+        // console.log(copiedPlace.coordinates,"copiesPlace")
+        // console.log(marker.lat,"lat")
         copiedPlace.coordinates.lng=marker.lng
         copiedPlace.coordinates.lat=marker.lat
         this.setState({place:copiedPlace})
@@ -69,7 +69,7 @@ export class MapContainer extends Component {
         return (
             <div>
                 <div style={{backgroundColor:'white'}}>
-                <GoogleComponent coordinates={true} apiKey={"AIzaSyCz75H6TUotNy-TcGON0wmw5pjOM2quK6s"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
+                <GoogleComponent coordinates={true} apiKey={"AIzaSyCjSsfCszZMbzuR6GWj_o4dEg0wWvaaB8o"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
                 </div>
             <Map center={{lat: this.state.place.coordinates.lat,lng:this.state.place.coordinates.lng}} initialCenter={{lat: this.state.place.coordinates.lat, lng: this.state.place.coordinates.lng}} google={this.props.google} zoom={14}>
                 {this.state.markers.map((marker, i) => {

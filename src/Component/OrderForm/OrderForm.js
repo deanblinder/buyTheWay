@@ -107,6 +107,7 @@ class OrderForm extends Component{
     }
     handleOrder=(event)=>{
         event.preventDefault();
+        console.log("jdjdj")
         if(image){
             storage.ref(`profile/${this.state.image.name}`).put(this.state.image)
             storage.ref("profile").child(this.state.image.name).getDownloadURL().then(myURL=>{
@@ -132,9 +133,14 @@ class OrderForm extends Component{
                 }
                 console.log(order)
 
-                axios.post("https://buy-the-way-a829f.firebaseio.com/orders.json",order).then()
-                console.log(localStorage.getItem('username'))
-                 this.props.history.push("profilePage")
+                axios.post("https://buy-the-way-a829f.firebaseio.com/orders.json",order).then(
+                    response=>{
+                        console.log(localStorage.getItem('username'))
+                        this.props.history.push("/profilePage")
+                        window.location.reload(false);
+                    }
+                )
+
 
             })
         }
@@ -154,8 +160,12 @@ class OrderForm extends Component{
 
             }
             console.log(order)
-            axios.post("https://buy-the-way-a829f.firebaseio.com/orders.json",order).then()
-            window.location.reload(false);
+            axios.post("https://buy-the-way-a829f.firebaseio.com/orders.json",order).then(
+                response=>{
+                     window.location.reload(false);
+                }
+            )
+
         }
 
 
@@ -179,10 +189,6 @@ class OrderForm extends Component{
     }
 
     render() {
-        const imgClick=()=>{
-            console.log("kdlsdlsdkl")
-        }
-        console.log(this.state)
         return(
             <div className="OrderForm">
                 <Form>
@@ -209,11 +215,13 @@ class OrderForm extends Component{
                     </Form.Group>
                     <Form.Group controlId="exampleForm.SelectCustom">
                         <Form.Label>סיבה</Form.Label>
-                        <Form.Control as="select" custom onChange={(event)=>this.reasonChangedHandler(event)}>
-                            <option>בידוד</option>
-                            <option>קבוצת סיכון</option>
-                            <option>אחר..</option>
+
+                        <Form.Control style={{textAlign:"right"}} as="select" custom onChange={(event)=>this.reasonChangedHandler(event)}>
+                                <option>בידוד</option>
+                                <option>קבוצת סיכון</option>
+                                <option>אחר..</option>
                         </Form.Control>
+
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>קניות</Form.Label>
@@ -250,7 +258,7 @@ class OrderForm extends Component{
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>כתובת</Form.Label>
                             <div style={{backgroundColor:'white'}}>
-                                <GoogleComponent language={'iw'} coordinates={true} apiKey={"AIzaSyCz75H6TUotNy-TcGON0wmw5pjOM2quK6s"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
+                                <GoogleComponent language={'iw'} coordinates={true} apiKey={"AIzaSyCjSsfCszZMbzuR6GWj_o4dEg0wWvaaB8o"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
                             </div>
                         </Form.Group>
                         <Form.Group>

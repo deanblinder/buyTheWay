@@ -65,16 +65,18 @@ class Order extends Component{
                             }
                             <h6>:הערות</h6>{this.props.comment}
                             <br/>
-                            <div>
-                                <Row>
-                                    <Col>
+                            {/*<div>*/}
+                                {/*<Row>*/}
+                                    {/*<Col>*/}
                                         <whatsapp-button style={{marginTop:'10%'}} phone={myPhoneNumber} text="" label="Start Chat"></whatsapp-button>
-                                    </Col>
-                                    <Col>
-                                        <img onClick={this.facebookClick} src={faceBook} style={{height:'100%',width:'120%'}} />
-                                    </Col>
-                                </Row>
-                            </div>
+                                    {/*</Col>*/}
+                                    {/*<Col>*/}
+                                        {/*<a href="https://www.facebook.com/">*/}
+                                        {/*<img onClick={this.facebookClick} src={faceBook} style={{height:'100%',width:'120%'}} />*/}
+                                        {/*</a>*/}
+                                        {/*</Col>*/}
+                                {/*</Row>*/}
+                            {/*</div>*/}
 
                         </Card.Text>
                     </Card.Body>
