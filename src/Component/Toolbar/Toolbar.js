@@ -6,11 +6,7 @@ class Toolbar extends Component{
         isLoggedIn:false
     }
     componentDidMount() {
-
         localStorage.getItem('isLoggedIn')==="true"? this.setState({isLoggedIn:true}):this.setState({isLoggedIn:false})
-        console.log(localStorage.getItem('username'))
-        console.log(localStorage)
-        console.log(this.state.isLoggedIn)
     }
 
     logOut=()=>{
@@ -19,10 +15,7 @@ class Toolbar extends Component{
         localStorage.clear()
     }
     render() {
-        // let ProfilePagePath="/profilePage/"+localStorage.getItem('username')
-        // let MapPagePath="/map/"+localStorage.getItem('username')
         return(
-
             <div>
                     <Navbar bg="dark" variant="dark">
                         <Navbar.Brand hidden={this.state.isLoggedIn} href="/">Home</Navbar.Brand>

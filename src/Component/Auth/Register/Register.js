@@ -92,25 +92,25 @@ class Register extends Component{
 
     render() {
         return(
-            <div className='RegisterForm1' style={{textAlign:"right"}}>
+            <div className='RegisterForm1' >
                 <h1  style={{textAlign:'center'}}>Register</h1>
                 <Form>
-                    <Form.Group controlId="formBasicUsername">
-                        <Form.Label>:שם משתמש</Form.Label>
+                    <Form.Group controlId="formBasicUsername"  >
+                        <Form.Label>username:</Form.Label>
                         <Form.Control type="text"
                                       placeholder="Enter username"
                                       value={this.state.username.value}
                                       onChange={(event)=>this.usernameChangedHandler(event)}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>:מייל</Form.Label>
+                        <Form.Label>email:</Form.Label>
                         <Form.Control type="email"
                                       placeholder="Enter email"
                                       value={this.state.email.value}
                                       onChange={(event)=>this.emailChangedHandler(event)}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
-                        <Form.Label>:סיסמה</Form.Label>
+                        <Form.Label>password:</Form.Label>
                         <Form.Control type="password"
                                       placeholder="Password"
                                       value={this.state.password.value}
@@ -135,6 +135,7 @@ class Register extends Component{
                             </Col>
                         </Form.Row>
                 </Form>
+
             </div>
         )
     }

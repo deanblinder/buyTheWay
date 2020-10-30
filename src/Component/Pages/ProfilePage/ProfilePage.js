@@ -15,7 +15,7 @@ class ProfilePage extends Component{
 
 
     componentDidMount() {
-        axios.get('https://buy-the-way-a829f.firebaseio.com/orders.json')
+        axios.get('http://buy-the-way-a829f.firebaseio.com/orders.json')
             .then(response=>{
                  let orders=response.data
                 console.log(orders)
@@ -38,23 +38,42 @@ class ProfilePage extends Component{
         // });
     }
     removeOrder=()=>{
-        // let firebaseConfig = {
-        //     apiKey: "AIzaSyBhjnNRBDpLdxhRwXRbiPUohAQTudP33KA",
-        //     authDomain: "buy-the-way-a829f.firebaseapp.com",
-        //     databaseURL: "https://buy-the-way-a829f.firebaseio.com",
-        //     projectId: "buy-the-way-a829f",
-        //     storageBucket: "buy-the-way-a829f.appspot.com",
-        //     messagingSenderId: "801518734561",
-        //     appId: "1:801518734561:web:bfb1a37104c212e31d3ba0",
-        //     measurementId: "G-F8R84WHH2H"
-        // };
-        // // Initialize Firebase
-        // firebase.initializeApp(firebaseConfig);
-        // axios.delete("https://buy-the-way-a829f.firebaseio.com/orders").
-        // then()
-        // let userRef = this.database.ref('orders/' + this.props.match.params.username);
-        // console.log(u)
-        // userRef.remove()
+        let firebaseConfig = {
+            apiKey: "AIzaSyBhjnNRBDpLdxhRwXRbiPUohAQTudP33KA",
+            authDomain: "buy-the-way-a829f.firebaseapp.com",
+            databaseURL: "https://buy-the-way-a829f.firebaseio.com",
+            projectId: "buy-the-way-a829f",
+            storageBucket: "buy-the-way-a829f.appspot.com",
+            messagingSenderId: "801518734561",
+            appId: "1:801518734561:web:bfb1a37104c212e31d3ba0",
+            measurementId: "G-F8R84WHH2H"
+        };
+        if(!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig)
+        }
+        this.database = firebase.database();
+        axios.get('http://buy-the-way-a829f.firebaseio.com/orders.json')
+            .then(response=>{
+                let orders=response.data
+                console.log(orders)
+                for(let key in orders){
+                    if(orders[key].username===localStorage.getItem('username')){
+                        console.log(key, "key")
+                        let userRef = this.database.ref('orders/'+key);
+                        console.log(userRef)
+                        userRef.remove()
+                        window.location.reload(false);
+                        break;
+                    }
+                }
+
+
+            })
+
+
+
+
+
     }
     render() {
         // window.location.reload(true);
@@ -89,7 +108,7 @@ class ProfilePage extends Component{
                                 <Button variant="primary" onClick={this.updateUserOrder}>עריכה</Button>
                             </div>
                             <div style={{paddingLeft:'10%' ,float:'left'}}>
-                                <Button variant="primary">הסרה</Button>
+                                <Button variant="primary" onClick={this.removeOrder}>הסרה</Button>
                             </div>
 
                         </Card.Text>

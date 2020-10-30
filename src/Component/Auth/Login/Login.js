@@ -71,7 +71,7 @@ class Login extends Component{
                             <Form.Group controlId="formBasicUsername" >
                                 <Form.Label>username</Form.Label>
                                 <Form.Control
-                                    type="text"
+                                                type="text"
                                               placeholder="Enter username"
                                               value={this.state.username.value}
                                               onChange={(event)=>this.usernameChangedHandler(event)}/>

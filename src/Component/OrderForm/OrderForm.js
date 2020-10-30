@@ -193,28 +193,28 @@ class OrderForm extends Component{
             <div className="OrderForm">
                 <Form>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>שפ פרטי</Form.Label>
+                        <Form.Label>:שם פרטי</Form.Label>
                         <Form.Control type="text"
                                       placeholder="שם פרטי"
                                       onChange={(event)=>this.nameChangedHandler(event)}
                                       style ={{textAlign:'right'}}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>שם משפחה</Form.Label>
+                        <Form.Label>:שם משפחה</Form.Label>
                         <Form.Control type="text"
                                       placeholder="שם משפחה"
                                       onChange={(event)=>this.lastNameChangedHandler(event)}
                                       style ={{textAlign:'right'}}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>מספר טלון</Form.Label>
+                        <Form.Label>:מספר טלפון</Form.Label>
                         <Form.Control type="text"
                                       placeholder="מספר טלפון"
                                       onChange={(event)=>this.phoneNumberChangedHandler(event)}
                                       style ={{textAlign:'right'}}/>
                     </Form.Group>
                     <Form.Group controlId="exampleForm.SelectCustom">
-                        <Form.Label>סיבה</Form.Label>
+                        <Form.Label>:סיבה</Form.Label>
 
                         <Form.Control style={{textAlign:"right"}} as="select" custom onChange={(event)=>this.reasonChangedHandler(event)}>
                                 <option>בידוד</option>
@@ -224,19 +224,19 @@ class OrderForm extends Component{
 
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>קניות</Form.Label>
+                        <Form.Label>:קניות</Form.Label>
                     {
                         this.state.items.map((item,i)=>(
-                            <div key={i}>
+                            <div key={i} >
                                 <Form.Row>
-                                    <InputGroup>
+                                    <InputGroup >
                                         <div className='orderButton'>
                                             <InputGroup.Append>
                                                 <Button variant="outline-secondary" onClick={this.addItem}>עוד</Button>
                                                 <Button variant="outline-secondary" >מחק</Button>
                                             </InputGroup.Append>
                                         </div>
-                                        <FormControl
+                                        <FormControl style={{textAlign:"right"}}
                                             placeholder="מוצר"
                                             aria-label="Item"
                                             aria-describedby="basic-addon2"
@@ -250,19 +250,20 @@ class OrderForm extends Component{
                         ))
                     }
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Label>הערות</Form.Label>
+                            <Form.Label>:הערות</Form.Label>
                             <Form.Control type="text"
                                           placeholder="הערות"
-                                          onChange={(event)=>this.commentChangedHandler(event)}/>
+                                          onChange={(event)=>this.commentChangedHandler(event)}
+                                          style={{textAlign:"right"}}/>
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Label>כתובת</Form.Label>
+                            <Form.Label>:כתובת</Form.Label>
                             <div style={{backgroundColor:'white'}}>
                                 <GoogleComponent language={'iw'} coordinates={true} apiKey={"AIzaSyCjSsfCszZMbzuR6GWj_o4dEg0wWvaaB8o"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
                             </div>
                         </Form.Group>
                         <Form.Group>
-                            <Form.File id="exampleFormControlFile1" type="file" onChange={this.changeImageHandler} label="בחר תמונה" />
+                            <Form.File style={{textAlign:"left", color:"white"}} id="exampleFormControlFile1" type="file" onChange={this.changeImageHandler} label="בחר תמונה" />
                         </Form.Group>
                     </Form.Group>
                         <Button variant="primary"
