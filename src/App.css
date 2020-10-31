@@ -1,11 +1,12 @@
 
 .App {
-    background-image: url("assets/backGround2.jpg");
+    /*background-image: url("assets/backGround2.jpg");*/
     position: absolute;
     min-width: 100%;
     min-height: 100%;
     background-size: cover;
     background-position: center;
     background-size: 80% 100%;
+    background-color: whitesmoke;
 
 }

@@ -1,10 +1,13 @@
 import React, {Component} from "react";
-import {Button, Container, Col,Row, Image, Card} from 'react-bootstrap'
+import {Button, Container, Col,Row, Card} from 'react-bootstrap'
+import Image from 'react-bootstrap/Image'
 import avatar from '../../../assets/avatar.jpg'
 import axios from 'axios'
 import order from "../../Orders/Order/Order";
+import cover from '../../../assets/cover.jpg'
 import firebase from "firebase";
 import ReactRoundedImage from "react-rounded-image";
+import ImageUploader from "../../ImageUploader/ImageUploader";
 import './ProfilePage.css'
 class ProfilePage extends Component{
     state={
@@ -66,21 +69,17 @@ class ProfilePage extends Component{
                         break;
                     }
                 }
-
-
             })
-
-
-
-
-
     }
     render() {
+
         // window.location.reload(true);
         console.log(localStorage)
         let button=null
         let button2=null
+        let fullName='FirstName LastName'
         if(this.state.hasRequest){
+            fullName=<h1>{this.state.order.firstName.value}</h1>
             button2= <div style={{textAlign:'right' }} className='-webkit-input-placeholder'>
                 <Card style={{ width: '18rem' }}>
                     <img alt='' variant="top" style={{width:'100%', height:"200px"}} src={this.state.order.imageURL} />
@@ -125,29 +124,39 @@ class ProfilePage extends Component{
         }
         return(
             <div>
-
-                    <Row>
-                        <div style={{paddingRight:'30%',paddingLeft:'0%',width:'10%'}}>
-                    <Col>
-
+            <div style={{position:'relative'}}>
+                <div className='coverImage'>
+                    <img src={cover} style={{position:"absolute"}}></img>
+                </div>
+            </div>
+                {/*<div>*/}
+                    <div className='content' >
+                        <div style={{display:'flex', justifyContent:'center'}}>
                         <ReactRoundedImage
                             image={this.state.image}
-                            // roundedColor="#321124"
-                            imageWidth="150"
-                            imageHeight="150"
-                            roundedSize="0"
+                            roundedColor="white"
+                            imageWidth="200"
+                            imageHeight="200"
+                            hoverColor="grey"
+                            roundedSize="10"
                         />
-
-                    </Col>
                         </div>
-                    <Col>
-                        {button}
-                        {button2}
-                    </Col>
-                    </Row>
+                        <div className='fullName'>
+                            {fullName}
+                        </div>
+                        <div>
+                            {button}
+                            {button2}
+                        </div>
+
+                    </div>
+
+                {/*</div>*/}
 
 
             </div>
+
+
         )
     }
 
