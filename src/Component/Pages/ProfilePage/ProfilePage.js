@@ -104,6 +104,7 @@ class ProfilePage extends Component{
                 </div>
                 {/*<div>*/}
                     <div className='content' >
+                        dk;sdl
                         <div style={{display:'flex', justifyContent:'center',}}>
                             <ReactRoundedImage
                                 image={this.state.image}
