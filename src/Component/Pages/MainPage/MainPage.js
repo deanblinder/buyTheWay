@@ -12,7 +12,7 @@ class MainPage extends Component{
 
     render() {
         return(
-            <div>
+            <div >
                 <Register goToLogin={this.goToLogin}></Register>
             </div>
 

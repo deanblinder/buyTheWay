@@ -1,13 +1,11 @@
 import React, {Component} from "react";
-import {Button, Container, Col,Row, Card} from 'react-bootstrap'
-import Image from 'react-bootstrap/Image'
-import avatar from '../../../assets/avatar.jpg'
+import {Container, Col,Row,Image,Card,Button} from 'react-bootstrap'
+import 'semantic-ui-css/semantic.min.css'
+import OrderCard from '../../Card/Card'
 import axios from 'axios'
-import order from "../../Orders/Order/Order";
 import cover from '../../../assets/cover.jpg'
 import firebase from "firebase";
 import ReactRoundedImage from "react-rounded-image";
-import ImageUploader from "../../ImageUploader/ImageUploader";
 import './ProfilePage.css'
 class ProfilePage extends Component{
     state={
@@ -64,96 +62,72 @@ class ProfilePage extends Component{
                         console.log(key, "key")
                         let userRef = this.database.ref('orders/'+key);
                         console.log(userRef)
+
                         userRef.remove()
-                        window.location.reload(false);
                         break;
                     }
+
                 }
+                window.location.reload(false);
             })
     }
+    clicked=()=>{
+        console.log("lksdsdl")
+    }
     render() {
-
-        // window.location.reload(true);
-        console.log(localStorage)
         let button=null
         let button2=null
         let fullName='FirstName LastName'
         if(this.state.hasRequest){
-            fullName=<h1>{this.state.order.firstName.value}</h1>
-            button2= <div style={{textAlign:'right' }} className='-webkit-input-placeholder'>
-                <Card style={{ width: '18rem' }}>
-                    <img alt='' variant="top" style={{width:'100%', height:"200px"}} src={this.state.order.imageURL} />
-                    <Card.Body>
-                        <Card.Title>שם:{this.state.order.firstName.value+" "+this.state.order.lastName.value}</Card.Title>
-                        <h6> כתובת:{this.state.order.address}</h6>
-                        {/*<h6>phone:{this.props.phoneNumber}</h6>*/}
-                        <Card.Text>
-                            <h6>סיבה:{this.state.order.reason}</h6>
-                            {/*<br/>*/}
-                            <h6>:מצרכים</h6>
-                            {
-                                this.state.order.items.map((item,i)=>(
-                                    <lu key={i} dir="rtl">
-                                        <li>
-                                            <strong>{item}</strong>
-                                        </li>
-                                    </lu>
-                                ))
-                            }
-                            <h6>:הערות</h6>{this.state.order.comment}
-                            <br/>
-                            {/*<whatsapp-button phone={myPhoneNumber} text="" label="Start Chat"></whatsapp-button>*/}
-                            <div style={{paddingLeft:'10%' ,float:'left'}}>
-                                <Button variant="primary" onClick={this.updateUserOrder}>עריכה</Button>
-                            </div>
-                            <div style={{paddingLeft:'10%' ,float:'left'}}>
-                                <Button variant="primary" onClick={this.removeOrder}>הסרה</Button>
-                            </div>
+            fullName=<h1>{this.state.order.firstName.value+" "+this.state.order.lastName.value}</h1>
+             button2= <div style={{marginLeft:"10%"}}>
 
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            </div>
+                 </div>
+
         }
         else{
-            button=
-                <div style={{paddingTop:'10%'}}>
+            button2=
+                // <div>
                     <Button variant="primary" onClick={this.goToOrderForm}>Enter request</Button>
-                </div>
+                // </div>
 
         }
         return(
-            <div>
-            <div style={{position:'relative'}}>
+            <div >
                 <div className='coverImage'>
                     <img src={cover} style={{position:"absolute"}}></img>
                 </div>
-            </div>
                 {/*<div>*/}
                     <div className='content' >
-                        <div style={{display:'flex', justifyContent:'center'}}>
-                        <ReactRoundedImage
-                            image={this.state.image}
-                            roundedColor="white"
-                            imageWidth="200"
-                            imageHeight="200"
-                            hoverColor="grey"
-                            roundedSize="10"
-                        />
+                        <div style={{display:'flex', justifyContent:'center',}}>
+                            <ReactRoundedImage
+                                image={this.state.image}
+                                roundedColor="white"
+                                imageWidth="200"
+                                imageHeight="200"
+                                hoverColor="grey"
+                                roundedSize="15"
+
+                            />
                         </div>
                         <div className='fullName'>
                             {fullName}
+
                         </div>
-                        <div>
-                            {button}
-                            {button2}
-                        </div>
+
+                        {/*<div>*/}
+                        {/*    {button}*/}
+
+                        {/*</div>*/}
+                        {button2}
 
                     </div>
+                <div style={{marginLeft:"10%",marginTop:'10%'}}>
+                    <OrderCard></OrderCard>
+                </div>
+
 
                 {/*</div>*/}
-
-
             </div>
 
 

@@ -117,7 +117,7 @@ class Register extends Component{
                                       onChange={(event)=>this.passwordChangedHandler(event)}/>
                     </Form.Group>
                         <Form.Row>
-                            <div className='Buttonss'>
+                            <div className='Buttonss' style={{marginLeft:"20%"}}>
                             <Button variant="primary" type="submit" onClick={this.orderHandler}>
                                 Register
                             </Button>
@@ -127,7 +127,7 @@ class Register extends Component{
                             </Col>
 
                             <Col>
-                                <div style={{textAlign:"right"}}>
+                                <div style={{textAlign:"right"}} style={{marginRight:"20%"}}>
                                 <Button variant="primary" type="submit" onClick={this.props.goToLogin}>
                                     Login
                                 </Button>

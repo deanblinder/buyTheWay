@@ -1,4 +1,4 @@
-::-webkit-input-placeholder { text-align:right; }
+/*::-webkit-input-placeholder { text-align:right; }*/
 
 
 .coverImage img{
@@ -8,7 +8,12 @@
     margin-left:5% ;
     margin-top: 0;
     border-radius:10px;
+    /*display: flex;*/
+    /*justify-content: center;*/
 }
+/*.coverImage:hover img{*/
+/*    opacity: 0.9;*/
+/*}*/
 .fullName{
     text-align: center;
     font-size: 30px;
@@ -18,14 +23,14 @@
     text-align: center;
 }
 .content{
-    font-size: 30px;
-    font-weight: bold;
+    /*font-size: 30px;*/
+    /*font-weight: bold;*/
     /*padding-left: 10%;*/
-    position: absolute;
+    position: relative;
+    /*position: absolute;*/
     /*justify-content: center;*/
     /*width: 20%;*/
-
     top:25vh;
     width: 100%;
-    /*margin: auto;*/
+    margin: auto;
 }

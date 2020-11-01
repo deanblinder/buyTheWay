@@ -1,8 +1,11 @@
 .RegisterForm1{
-    /*box-sizing: border-box;*/
-    /*box-shadow: 0 2px 3px #ccc;*/
+    box-sizing: border-box;
+    box-shadow: 0 15px 20px #ccc;
     width: 50%;
-    margin-left: 20%;
+    margin-left: 25%;
+    margin-top: 20vh;
+    background-color: whitesmoke;
+
 
 }
 .Headline{

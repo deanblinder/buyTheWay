@@ -83,7 +83,7 @@ class Login extends Component{
                                               value={this.state.password.value}
                                               onChange={(event)=>this.passwordChangedHandler(event)}/>
                             </Form.Group>
-                                <Button variant="primary" type="submit" onClick={this.orderHandler}>
+                                <Button style={{marginLeft:"45%"}} variant="primary" type="submit" onClick={this.orderHandler}>
                                     Submit
                                 </Button>
                         </Form>
