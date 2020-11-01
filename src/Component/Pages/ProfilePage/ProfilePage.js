@@ -75,13 +75,18 @@ class ProfilePage extends Component{
         console.log("lksdsdl")
     }
     render() {
+
         let button=null
         let button2=null
         let fullName='FirstName LastName'
         if(this.state.hasRequest){
+            console.log(this.state.order)
             fullName=<h1>{this.state.order.firstName.value+" "+this.state.order.lastName.value}</h1>
              button2= <div style={{marginLeft:"10%"}}>
-
+                 <OrderCard
+                     address={this.state.order.address}
+                     groceries={this.state.order.items}
+                 comment={this.state.order.comment}/>
                  </div>
 
         }
@@ -95,7 +100,7 @@ class ProfilePage extends Component{
         return(
             <div >
                 <div className='coverImage'>
-                    <img src={cover} style={{position:"absolute"}}></img>
+                    <img src={cover}></img>
                 </div>
                 {/*<div>*/}
                     <div className='content' >
@@ -123,7 +128,7 @@ class ProfilePage extends Component{
 
                     </div>
                 <div style={{marginLeft:"10%",marginTop:'10%'}}>
-                    <OrderCard></OrderCard>
+
                 </div>
 
 

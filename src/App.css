@@ -1,13 +1,12 @@
 
 .App {
     /*background-image: url("assets/backGround2.jpg");*/
-    position: absolute;
+    /*position: absolute;*/
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
     background-size: 100% 100%;
     background-color: lightgray;
-
 
 }

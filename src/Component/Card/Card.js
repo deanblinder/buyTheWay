@@ -12,20 +12,20 @@ class CardExampleGroups extends Component {
                     {/*<Card.Content>*/}
 
                         <Card.Header>My active request</Card.Header>
-                        <Card.Meta>Address:</Card.Meta>
+                        <Card.Meta>Address: {this.props.address}</Card.Meta>
                         <Card.Description>
                             Groceries
-                            <ui>
-                                <li>
-                                    milk
-                                </li>
-                                <li>
-                                    milk
-                                </li>
-                                <li>
-                                    milk
-                                </li>
-                            </ui>
+                            {
+                                this.props.groceries.map((item,i)=>(
+                                    <lu key={i}>
+                                        {/*dir="rtl"*/}
+                                        <li>
+                                            <strong>{item}</strong>
+                                        </li>
+                                    </lu>
+                                ))
+                            }
+                            comment:{this.props.comment}
                         </Card.Description>
                     {/*</Card.Content>*/}
                     <Card.Content extra>

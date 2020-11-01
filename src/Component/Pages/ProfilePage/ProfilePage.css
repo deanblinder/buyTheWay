@@ -23,14 +23,15 @@
     text-align: center;
 }
 .content{
+
     /*font-size: 30px;*/
     /*font-weight: bold;*/
     /*padding-left: 10%;*/
-    position: relative;
+    /*position: relative;*/
     /*position: absolute;*/
     /*justify-content: center;*/
     /*width: 20%;*/
-    top:25vh;
-    width: 100%;
-    margin: auto;
+    /*top:25vh;*/
+    /*width: 100%;*/
+    /*margin: auto;*/
 }
