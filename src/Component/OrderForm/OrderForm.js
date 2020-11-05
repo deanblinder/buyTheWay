@@ -111,11 +111,6 @@ class OrderForm extends Component{
         if(image){
             storage.ref(`profile/${this.state.image.name}`).put(this.state.image)
             storage.ref("profile").child(this.state.image.name).getDownloadURL().then(myURL=>{
-                // this.setState({url:myURL,progress:0})
-                console.log(myURL,"url")
-                // if(!myURL){
-                //     myURL='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hiclipart.com%2Ffree-transparent-background-png-clipart-pfjjr&psig=AOvVaw0hO-Oim3nCrAKZksWdYL-D&ust=1603208330555000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjDk9D-wOwCFQAAAAAdAAAAABAE'
-                // }
                 let order={
                     username:localStorage.getItem('username'),
                     firstName: this.state.firstName,
@@ -167,8 +162,6 @@ class OrderForm extends Component{
             )
 
         }
-
-
     }
     changeLanLngHandler=(lat,lng,address)=>{
         this.setState({myLat:lat,myLng:lng,address:address})

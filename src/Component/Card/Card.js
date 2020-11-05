@@ -33,7 +33,7 @@ class CardExampleGroups extends Component {
                             <Button basic color='green'>
                                 Edit
                             </Button>
-                            <Button basic color='red'>
+                            <Button basic color='red' onClick={this.props.removeOrder}>
                                 Remove
                             </Button>
                         </div>
