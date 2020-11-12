@@ -175,96 +175,76 @@ class ProfilePage extends Component{
             }
         }
     }
-    clicked=()=>{
-        console.log("lksdsdl")
-    }
     render() {
-
-        let button=null
         let button2=null
         let fullName='FirstName LastName'
         if(this.state.hasRequest){
             console.log(this.state.order)
             fullName=<h1>{this.state.order.firstName.value+" "+this.state.order.lastName.value}</h1>
-             button2= <div style={{marginLeft:"10%"}}>
+             button2= <div style={{marginLeft:"10%",zIndex:'1'}}>
                  <OrderCard
                      address={this.state.order.address}
                      groceries={this.state.order.items}
-                 comment={this.state.order.comment}
-                 removeOrder={this.removeOrder}/>
+                     comment={this.state.order.comment}
+                     removeOrder={this.removeOrder}/>
                  </div>
-
         }
         else{
-            button2=
-                // <div>
-                    <Button variant="primary" onClick={this.goToOrderForm}>Enter request</Button>
-                // </div>
+
+                button2= <Button  variant="primary" onClick={this.goToOrderForm}>Enter request</Button>
 
         }
         return(
-            <div >
-                <div className='coverImage'>
-                    <img src={this.state.coverPic}></img>
-                </div>
+            <div>
+            <div style={{position:'relative'}}>
+                    <div className='coverImage'>
+                        <img src={this.state.coverPic}></img>
+                            <div style={{position:'absolute', top:'55%',right:'85%',zIndex:'1'}}>
+                                <input id='coverPic'  type='file' onChange={this.changeCoverPicHandler}></input>
+                                <label style={{marginLeft:'80%' , width: '100%'}}  htmlFor='coverPic'>
+                                    <span className="material-icons">
+                                        add_photo_alternate
+                                    </span>&nbsp;
+                                    change cover picture
+                                </label>
+                            </div>
+                    </div>
+                <div style={{position:'absolute', top:'50%',justifyContent:'center',width:'100%'}}>
+                    <div className='profilePic'>
+                        <div style={{display:'flex', justifyContent:'center', position:'relative',zIndex:'0'}} >
+                           <div style={{justifyContent:'center'}}>
+                               <ReactRoundedImage
+                                   image={this.state.profilePic}
+                                   roundedColor="white"
+                                   imageWidth="200"
+                                   imageHeight="200"
+                                   hoverColor="grey"
+                                   roundedSize="15"
+                               />
+                           </div>
 
-                <div  style={{display:'flex', justifyContent:'center'}}>
-                    <input id='coverPic'  type='file' onChange={this.changeCoverPicHandler}></input>
-                    <label style={{marginLeft:'80%'}}  for='coverPic'>
-                        <span className="material-icons">
-                            add_photo_alternate
-                        </span>&nbsp;
-                    </label>
-                </div>
-                <div>
-                    <Button variant="primary">Edit profile</Button>
-                </div>
-                {/*<div>*/}
-                    <div className='content'>
-                        <div style={{display:'flex', justifyContent:'center'}} >
-                            <ReactRoundedImage
-                                image={this.state.profilePic}
-                                roundedColor="white"
-                                imageWidth="200"
-                                imageHeight="200"
-                                hoverColor="grey"
-                                roundedSize="15"
-
-                            />
+                            <div style={{position:'absolute',top:'70%',left:'60%',height:'10%'}}>
+                                <input id='profilePic' type='file' onChange={this.changeProfilePicHandler}></input>
+                                <label style={{marginLeft: '50%'}} htmlFor='profilePic'>
+                                        <span className="material-icons">
+                                        add_photo_alternate
+                                         </span> &nbsp;
+                                </label>
+                            </div>
                         </div>
-                        <div  style={{display:'flex', justifyContent:'center'}}>
-                            <input id='profilePic' type='file' onChange={this.changeProfilePicHandler}></input>
-                            <label style={{marginLeft:'50%'}} for='profilePic'>
-                                <span className="material-icons">
-                                add_photo_alternate
-                             </span> &nbsp;
-
-                            </label>
-                        </div>
-
                         <div className='fullName'>
                             {fullName}
-
                         </div>
+
                     </div>
-                        {/*<div>*/}
-                        {/*    {button}*/}
-
-                        {/*</div>*/}
-
-
+                    <div>
+                        <Button variant="primary">Edit profile</Button>
                         {button2}
-
-
-                {/*<div style={{marginLeft:"10%",marginTop:'10%'}}>*/}
-
-                {/*</div>*/}
-
-
-                {/*</div>*/}
+                    </div>
+                </div>
             </div>
 
-
+            </div>
         )
     }
 
