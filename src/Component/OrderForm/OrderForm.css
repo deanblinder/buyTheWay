@@ -1,10 +1,11 @@
 .OrderForm{
-    /*box-sizing: border-box;*/
-    /*box-shadow: 0 2px 3px #ccc;*/
-    text-align: right;
+    box-sizing: border-box;
+    box-shadow: 0 10px 15px #ccc;
+    padding: 60px;
     width: 50%;
     margin-left: 20%;
-    margin-top: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 
 }
 .Headline{

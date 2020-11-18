@@ -47,13 +47,13 @@ class Order extends Component{
                 <Card style={{ width: '18rem', textAlign:'right' }}>
                         <img alt='' variant="top" style={{width:'100%', height:"200px"}} src={this.props.image} />
                     <Card.Body>
-                        <Card.Title><h6>שם:{this.props.fullName}</h6></Card.Title>
-                        <h6>כתובת:{this.props.address} </h6>
+                        <Card.Title><h6>name:{this.props.fullName}</h6></Card.Title>
+                        <h6>address:{this.props.address} </h6>
                         {/*<h6>phone:{this.props.phoneNumber}</h6>*/}
                         <Card.Text>
-                            <h6>סיבה:{this.props.reason}</h6>
+                            <h6>reason:{this.props.reason}</h6>
                             {/*<br/>*/}
-                            <h6>:מצרכים</h6>
+                            <h6>groceries:</h6>
                             {
                                 this.props.groceries.map((item,i)=>(
                                     <lu key={i} dir="rtl">
@@ -63,7 +63,7 @@ class Order extends Component{
                                     </lu>
                                 ))
                             }
-                            <h6>:הערות</h6>{this.props.comment}
+                            <h6>comments:</h6>{this.props.comment}
                             <br/>
                             {/*<div>*/}
                                 {/*<Row>*/}

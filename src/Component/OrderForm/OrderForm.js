@@ -18,7 +18,7 @@ class OrderForm extends Component{
         firstName:'',
         lastName:'',
         phoneNumber:'',
-        reason:'בידוד',
+        reason:'isolate',
         items:[""],
         comment:'',
         // myLat:'',
@@ -186,55 +186,52 @@ class OrderForm extends Component{
             <div className="OrderForm">
                 <Form>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>:שם פרטי</Form.Label>
+                        <Form.Label>first name:</Form.Label>
                         <Form.Control type="text"
-                                      placeholder="שם פרטי"
-                                      onChange={(event)=>this.nameChangedHandler(event)}
-                                      style ={{textAlign:'right'}}/>
+                                      placeholder="first name"
+                                      onChange={(event)=>this.nameChangedHandler(event)}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>:שם משפחה</Form.Label>
+                        <Form.Label>last name:</Form.Label>
                         <Form.Control type="text"
-                                      placeholder="שם משפחה"
-                                      onChange={(event)=>this.lastNameChangedHandler(event)}
-                                      style ={{textAlign:'right'}}/>
+                                      placeholder="last name"
+                                      onChange={(event)=>this.lastNameChangedHandler(event)}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>:מספר טלפון</Form.Label>
+                        <Form.Label>phone number:</Form.Label>
                         <Form.Control type="text"
-                                      placeholder="מספר טלפון"
-                                      onChange={(event)=>this.phoneNumberChangedHandler(event)}
-                                      style ={{textAlign:'right'}}/>
+                                      placeholder="phone number"
+                                      onChange={(event)=>this.phoneNumberChangedHandler(event)}/>
                     </Form.Group>
                     <Form.Group controlId="exampleForm.SelectCustom">
-                        <Form.Label>:סיבה</Form.Label>
+                        <Form.Label>reason:</Form.Label>
 
                         <Form.Control style={{textAlign:"right"}} as="select" custom onChange={(event)=>this.reasonChangedHandler(event)}>
-                                <option>בידוד</option>
-                                <option>קבוצת סיכון</option>
-                                <option>אחר..</option>
+                                <option>isolate</option>
+                                <option>risk group</option>
+                                <option>other...</option>
                         </Form.Control>
 
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>:קניות</Form.Label>
+                        <Form.Label>groceries:</Form.Label>
                     {
                         this.state.items.map((item,i)=>(
                             <div key={i} >
                                 <Form.Row>
                                     <InputGroup >
-                                        <div className='orderButton'>
-                                            <InputGroup.Append>
-                                                <Button variant="outline-secondary" onClick={this.addItem}>עוד</Button>
-                                                <Button variant="outline-secondary" >מחק</Button>
-                                            </InputGroup.Append>
-                                        </div>
-                                        <FormControl style={{textAlign:"right"}}
-                                            placeholder="מוצר"
+                                        <FormControl
+                                            placeholder="item"
                                             aria-label="Item"
                                             aria-describedby="basic-addon2"
                                             onChange={(event)=>this.itemChangeHandler(event,i)}
                                         />
+                                        <div className='orderButton'>
+                                            <InputGroup.Append>
+                                                <Button variant="outline-secondary" onClick={this.addItem}>add</Button>
+                                                <Button variant="outline-secondary" >delete</Button>
+                                            </InputGroup.Append>
+                                        </div>
 
 
                                     </InputGroup>
@@ -243,20 +240,19 @@ class OrderForm extends Component{
                         ))
                     }
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Label>:הערות</Form.Label>
+                            <Form.Label>comments:</Form.Label>
                             <Form.Control type="text"
-                                          placeholder="הערות"
-                                          onChange={(event)=>this.commentChangedHandler(event)}
-                                          style={{textAlign:"right"}}/>
+                                          placeholder="comments"
+                                          onChange={(event)=>this.commentChangedHandler(event)}/>
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Label>:כתובת</Form.Label>
+                            <Form.Label>address:</Form.Label>
                             <div style={{backgroundColor:'white'}}>
                                 <GoogleComponent language={'iw'} coordinates={true} apiKey={"AIzaSyCjSsfCszZMbzuR6GWj_o4dEg0wWvaaB8o"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
                             </div>
                         </Form.Group>
                         <Form.Group>
-                            <Form.File style={{textAlign:"left", color:"white"}} id="exampleFormControlFile1" type="file" onChange={this.changeImageHandler} label="בחר תמונה" />
+                            <Form.File style={{textAlign:"left"}} id="exampleFormControlFile1" type="file" onChange={this.changeImageHandler} label="choose picture" />
                         </Form.Group>
                     </Form.Group>
                         <Button variant="primary"
