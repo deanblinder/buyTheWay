@@ -40,6 +40,7 @@ class Order extends Component{
                             }
                             <h6>comments:</h6>{this.props.comment}
                             <br/>
+                            {/*ldsfl*/}
                             {/*<div>*/}
                                 {/*<Row>*/}
                                     {/*<Col>*/}
