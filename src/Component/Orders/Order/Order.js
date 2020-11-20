@@ -18,33 +18,8 @@ class Order extends Component{
         // console.log(number)
         let myPhoneNumber="https://wa.me/972"+number
         return(
-            // <div className='Order'>
-            //     <h1>Address: {this.props.address}</h1>
-            //     <h3>Phone number : {this.props.phoneNumber}</h3>
-            //     <div style={{float:'right'}}>
-            //         <p >Distance: 100m</p>
-            //         <p >Comments:{this.props.comments}</p>
-            //     </div>
-            //     <p>Name: {this.props.fullName}</p>
-            //     <p>Reason: {this.props.reason}</p>
-            //     <p >groceries:</p>
-            //     {
-            //         this.props.groceries.map((grocery,i)=>{
-            //             return(
-            //                 <lu>
-            //                     <li>
-            //                         {/*{grocery.value}*/}
-            //                         {grocery}
-            //                     </li>
-            //                 </lu>
-            //
-            //             )
-            //         })
-            //     }
-            //
-            // </div>
             <div>
-                <Card style={{ width: '18rem', textAlign:'right' }}>
+                <Card style={{ width: '18rem'}}>
                         <img alt='' variant="top" style={{width:'100%', height:"200px"}} src={this.props.image} />
                     <Card.Body>
                         <Card.Title><h6>name:{this.props.fullName}</h6></Card.Title>
@@ -56,7 +31,7 @@ class Order extends Component{
                             <h6>groceries:</h6>
                             {
                                 this.props.groceries.map((item,i)=>(
-                                    <lu key={i} dir="rtl">
+                                    <lu key={i}>
                                         <li>
                                             <strong>{item}</strong>
                                         </li>

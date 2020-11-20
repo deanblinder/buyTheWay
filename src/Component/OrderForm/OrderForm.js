@@ -31,6 +31,23 @@ class OrderForm extends Component{
 
 
     }
+    componentDidMount() {
+        axios.get("https://buy-the-way-a829f.firebaseio.com/users.json")
+            .then(response=>{
+                let myPic=null;
+                let users=response.data
+                console.log(users)
+                for(let key in users){
+                    if(users[key].userName===localStorage.getItem('username')){
+                        myPic=users[key].profilePic
+                        this.setState({image:myPic})
+                        // console.log(myPic,'mypic')
+                    }
+                }
+            }
+        )
+    }
+
     addItem=()=>{
          let copiedItems=this.state.items
          copiedItems.push('')
@@ -108,78 +125,48 @@ class OrderForm extends Component{
     handleOrder=(event)=>{
         event.preventDefault();
         console.log("jdjdj")
-        if(image){
-            storage.ref(`profile/${this.state.image.name}`).put(this.state.image)
-            storage.ref("profile").child(this.state.image.name).getDownloadURL().then(myURL=>{
-                let order={
-                    username:localStorage.getItem('username'),
-                    firstName: this.state.firstName,
-                    lastName: this.state.lastName,
-                    phoneNumber:this.state.phoneNumber,
-                    reason:this.state.reason,
-                    items:this.state.items,
-                    comment:this.state.comment,
-                    address:this.state.place.place,
-                    lat:this.state.place.coordinates.lat,
-                    lng:this.state.place.coordinates.lng,
-                    // place:this.state.place.coordinates.
-                    imageURL:myURL
+        let order={
+            username:localStorage.getItem('username'),
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            phoneNumber:this.state.phoneNumber,
+            reason:this.state.reason,
+            items:this.state.items,
+            comment:this.state.comment,
+            address:this.state.place.place,
+            lat:this.state.place.coordinates.lat,
+            lng:this.state.place.coordinates.lng,
+            // place:this.state.place.coordinates.
+            imageURL:this.state.image
 
-                }
-                console.log(order)
+         }
+        console.log(order)
 
-                axios.post("https://buy-the-way-a829f.firebaseio.com/orders.json",order).then(
-                    response=>{
-                        console.log(localStorage.getItem('username'))
-                        this.props.history.push("/profilePage")
-                        window.location.reload(false);
-                    }
-                )
-
-
-            })
-        }
-        else {
-            let order={
-                username:this.props.match.params.username,
-                firstName: this.state.firstName,
-                lastName: this.state.lastName,
-                phoneNumber:this.state.phoneNumber,
-                reason:this.state.reason,
-                items:this.state.items,
-                comment:this.state.comment,
-                address:this.state.place.place,
-                lat:this.state.place.coordinates.lat,
-                lng:this.state.place.coordinates.lng,
-                imageURL:"https://p1.hiclipart.com/preview/823/765/288/login-icon-system-administrator-user-user-profile-icon-design-avatar-face-head-png-clipart.jpg"
-
+        axios.post("https://buy-the-way-a829f.firebaseio.com/orders.json",order).then(
+            response=>{
+                console.log(localStorage.getItem('username'))
+                this.props.history.push("/profilePage")
+                window.location.reload(false);
             }
-            console.log(order)
-            axios.post("https://buy-the-way-a829f.firebaseio.com/orders.json",order).then(
-                response=>{
-                     window.location.reload(false);
-                }
-            )
-
-        }
+        )
     }
     changeLanLngHandler=(lat,lng,address)=>{
         this.setState({myLat:lat,myLng:lng,address:address})
         console.log(this.state.myLat,this.state.myLng,this.state.address,'dean')
     }
-    changeImageHandler=(e)=>{
-        const file=e.target.files[0];
-        if(file){
-            const fileType= file["type"]
-            const validImageTypes=['image/gif','image/jpeg','image/png']
-            if(validImageTypes.includes(fileType)){
-                this.setState({image:file})
-            }
-            else{
-                alert("Image type is not good")
-            }
-        }
-    }
+    // changeImageHandler=(e)=>{
+    //     const file=e.target.files[0];
+    //     if(file){
+    //         const fileType= file["type"]
+    //         const validImageTypes=['image/gif','image/jpeg','image/png']
+    //         if(validImageTypes.includes(fileType)){
+    //             this.setState({image:file})
+    //         }
+    //         else{
+    //             alert("Image type is not good")
+    //         }
+    //     }
+    // }
 
     render() {
         return(
@@ -248,11 +235,8 @@ class OrderForm extends Component{
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>address:</Form.Label>
                             <div style={{backgroundColor:'white'}}>
-                                <GoogleComponent language={'iw'} coordinates={true} apiKey={"AIzaSyCjSsfCszZMbzuR6GWj_o4dEg0wWvaaB8o"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
+                                <GoogleComponent language={'iw'} coordinates={true} apiKey={"AIzaSyDS0IS4RuT_6DkT3ZgMpgAXqSCxYkpXQfc"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
                             </div>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.File style={{textAlign:"left"}} id="exampleFormControlFile1" type="file" onChange={this.changeImageHandler} label="choose picture" />
                         </Form.Group>
                     </Form.Group>
                         <Button variant="primary"

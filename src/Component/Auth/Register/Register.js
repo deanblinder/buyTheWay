@@ -25,16 +25,9 @@ class Register extends Component{
             userName: this.state.username.value,
             email: this.state.email.value,
             password: this.state.password.value,
+            profilePic:"https://p1.hiclipart.com/preview/823/765/288/login-icon-system-administrator-user-user-profile-icon-design-avatar-face-head-png-clipart.jpg"
            // returnSecureToken:true
         }
-        // axios.post("https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=AIzaSyBhjnNRBDpLdxhRwXRbiPUohAQTudP33KA",userData)
-        //     .then(response=>{
-        //         console.log(response)
-        //     })
-        //     .catch(err=>{
-        //         console.
-        //         console.log(err)
-        //     })
         axios.get('https://buy-the-way-a829f.firebaseio.com/users.json')
             .then(response=>{
                 let users=[]

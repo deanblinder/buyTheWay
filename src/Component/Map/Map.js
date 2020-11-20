@@ -55,17 +55,11 @@ export class MapContainer extends Component {
         let copiedPlace={
             ...this.state.place
         }
-        // console.log(marker, "marker")
-        // console.log(copiedPlace.coordinates,"copiesPlace")
-        // console.log(marker.lat,"lat")
         copiedPlace.coordinates.lng=marker.lng
         copiedPlace.coordinates.lat=marker.lat
         this.setState({place:copiedPlace})
-            // console.log(this.state.selectedMark)
     }
     render() {
-
-        // console.log(this.state.selectedMark, "selectedMArker")
         return (
             <div>
                 <div style={{backgroundColor:'white'}}>
