@@ -6,7 +6,14 @@
     margin-left: 20%;
     margin-top: 5%;
     margin-bottom: 5%;
+    background: white;
 
+}
+
+.Heading{
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black;
 }
 .Headline{
     text-align: center;

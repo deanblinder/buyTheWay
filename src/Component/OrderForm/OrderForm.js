@@ -173,25 +173,25 @@ class OrderForm extends Component{
             <div className="OrderForm">
                 <Form>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>first name:</Form.Label>
+                        <div className='Heading'>first name:</div>
                         <Form.Control type="text"
                                       placeholder="first name"
                                       onChange={(event)=>this.nameChangedHandler(event)}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>last name:</Form.Label>
+                        <div className='Heading'>last name:</div>
                         <Form.Control type="text"
                                       placeholder="last name"
                                       onChange={(event)=>this.lastNameChangedHandler(event)}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>phone number:</Form.Label>
+                        <div className='Heading'>phone number:</div>
                         <Form.Control type="text"
                                       placeholder="phone number"
                                       onChange={(event)=>this.phoneNumberChangedHandler(event)}/>
                     </Form.Group>
                     <Form.Group controlId="exampleForm.SelectCustom">
-                        <Form.Label>reason:</Form.Label>
+                        <div className='Heading'>reason:</div>
 
                         <Form.Control style={{textAlign:"right"}} as="select" custom onChange={(event)=>this.reasonChangedHandler(event)}>
                                 <option>isolate</option>
@@ -201,7 +201,7 @@ class OrderForm extends Component{
 
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>groceries:</Form.Label>
+                        <div className='Heading'>groceries:</div>
                     {
                         this.state.items.map((item,i)=>(
                             <div key={i} >
@@ -227,23 +227,24 @@ class OrderForm extends Component{
                         ))
                     }
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Label>comments:</Form.Label>
+                            <div className='Heading'>comments:</div>
                             <Form.Control type="text"
                                           placeholder="comments"
                                           onChange={(event)=>this.commentChangedHandler(event)}/>
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Label>address:</Form.Label>
+                            <div className='Heading'>address:</div>
                             <div style={{backgroundColor:'white'}}>
-                                <GoogleComponent language={'iw'} coordinates={true} apiKey={"AIzaSyDS0IS4RuT_6DkT3ZgMpgAXqSCxYkpXQfc"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
+                                {/*<GoogleAutoComplete></GoogleAutoComplete>*/}
+                                <GoogleComponent language={'iw'} coordinates={true} apiKey={"AIzaSyBRpBf8IvQe7mDA4buTgraHSYquHlzf0n4"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
                             </div>
                         </Form.Group>
                     </Form.Group>
-                        <Button variant="primary"
-                                type="submit"
-                                onClick={this.handleOrder}>
-                            Submit
-                        </Button>
+                        {/*<Button variant="primary"*/}
+                        {/*        type="submit"*/}
+                        {/*        onClick={this.handleOrder}>*/}
+                        {/*    Submit*/}
+                        {/*</Button>*/}
                 </Form>
             </div>
         )

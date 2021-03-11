@@ -1,4 +1,4 @@
-
+import {Button, Form,InputGroup,FormControl} from "react-bootstrap";
 import React,{Component} from 'react';
 // import classes from './GoogleAutoComplete.css'
 import './GoogleAutoComplete.css'
@@ -45,7 +45,7 @@ class LocationSearchInput extends Component {
                 >
                     {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                         <div>
-                            <input
+                            <Form.Control
                                    {...getInputProps({
                                        placeholder: 'Location',
                                        className : 'locationSearchInput',

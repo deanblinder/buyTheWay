@@ -69,7 +69,7 @@ class Login extends Component{
                         <h1 style={{textAlign:"center"}}>Login</h1>
                         <Form >
                             <Form.Group controlId="formBasicUsername" >
-                                <Form.Label>username</Form.Label>
+                                <h4 style={{margin:'10px'}}>username:</h4>
                                 <Form.Control
                                                 type="text"
                                               placeholder="Enter username"
@@ -77,7 +77,7 @@ class Login extends Component{
                                               onChange={(event)=>this.usernameChangedHandler(event)}/>
                             </Form.Group>
                             <Form.Group controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
+                                <h4 style={{margin:'10px'}}>password:</h4>
                                 <Form.Control type="password"
                                               placeholder="Password"
                                               value={this.state.password.value}

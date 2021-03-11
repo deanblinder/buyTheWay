@@ -4,6 +4,7 @@ import axios from 'axios'
 import React,{Component} from "react";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import icon from '../../assets/mapIcon.jpg'
+import GoogleAutoComplete from '../../Component/GoogleAutoComplete/GoogleAutoComplete'
 
 
 
@@ -63,7 +64,8 @@ export class MapContainer extends Component {
         return (
             <div>
                 <div style={{backgroundColor:'white'}}>
-                <GoogleComponent coordinates={true} apiKey={"AIzaSyCjSsfCszZMbzuR6GWj_o4dEg0wWvaaB8o"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
+                    <GoogleAutoComplete></GoogleAutoComplete>
+                {/*<GoogleComponent coordinates={true} apiKey={"AIzaSyAM5tW6wSb8nkF-Qb2S5ZGgxDD6P-jEhbg"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>*/}
                 </div>
             <Map center={{lat: this.state.place.coordinates.lat,lng:this.state.place.coordinates.lng}} initialCenter={{lat: this.state.place.coordinates.lat, lng: this.state.place.coordinates.lng}} google={this.props.google} zoom={14}>
                 {this.state.markers.map((marker, i) => {
@@ -127,5 +129,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: ("AIzaSyCjSsfCszZMbzuR6GWj_o4dEg0wWvaaB8o")
+    apiKey: ("AIzaSyAM5tW6wSb8nkF-Qb2S5ZGgxDD6P-jEhbg")
 })(MapContainer)

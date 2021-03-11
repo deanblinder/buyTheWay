@@ -89,21 +89,21 @@ class Register extends Component{
                 <h1  style={{textAlign:'center'}}>Register</h1>
                 <Form>
                     <Form.Group controlId="formBasicUsername"  >
-                        <Form.Label>username:</Form.Label>
+                        <h4 style={{margin:'10px'}}>username:</h4>
                         <Form.Control type="text"
                                       placeholder="Enter username"
                                       value={this.state.username.value}
                                       onChange={(event)=>this.usernameChangedHandler(event)}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>email:</Form.Label>
+                        <h4 style={{margin:'10px'}}>email:</h4>
                         <Form.Control type="email"
                                       placeholder="Enter email"
                                       value={this.state.email.value}
                                       onChange={(event)=>this.emailChangedHandler(event)}/>
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
-                        <Form.Label>password:</Form.Label>
+                        <h4 style={{margin:'10px'}}>password:</h4>
                         <Form.Control type="password"
                                       placeholder="Password"
                                       value={this.state.password.value}

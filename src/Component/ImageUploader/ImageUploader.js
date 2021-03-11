@@ -9,10 +9,7 @@ class ImageUploader extends Component {
 
     render() {
         return(
-
-
                 <Avatar style={{ marginLeft:'auto',marginRight:'auto', display:'block'}} size={150} icon={<UserOutlined />} />
-
             )
 
 
