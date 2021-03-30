@@ -1,57 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');*/
 
-*{
-    margin:0;
-    padding:0;
-}
-.canvas{
-    height: 100vh;
-    background-image: url(https://images.pexels.com/photos/802412/pexels-photo-802412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-    background-size: cover;
-    background-position: center;
+/**{*/
+/*    margin:0;*/
+/*    padding:0;*/
+/*}*/
+/*.canvas{*/
+/*    height: 100vh;*/
+/*    background-image: url(https://images.pexels.com/photos/802412/pexels-photo-802412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
 
-}
-
-.locationSearchInput{
-    outline: none;
-    /*border: black;*/
-    background-color: white;
-    font: inherit;
-    padding: 4px 6px;
-    display: block;
-    width: 100%;
-    height: 60%;
-    /*box-sizing: border-box;*/
-    border-radius: 4px;
-    height: 100%;
-    width: 100%;
-
-
-}
-
-/*.locationSearchInput,*/
-/*.locationSearchInput:focus,*/
-/*.locationSearchInput:active {*/
-/*    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);*/
-/*    border: honeydew;*/
-/*    !*display: block;*!*/
-/*    !*width: 100%;*!*/
-/*    !*padding: 16px;*!*/
-/*    !*font-size: 16px;*!*/
-/*    !*border-radius: 2px;*!*/
-/*    !*outline: none;*!*/
 /*}*/
 
-.inputSuggestion{
-    /*font-family: 'Lato', sans-serif;*/
-    /*width: 500px;*/
-    /*height: 20px;*/
-    /*background-color: white;*/
-    /*border-bottom: 1px black dotted;*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*font-size: 10rem;*/
-    /*font-weight: bold;*/
-    color: black;
-    /*margin-left: 5rem;*/
-}
+/*.locationSearchInput{*/
+/*    outline: none;*/
+/*    !*border: black;*!*/
+/*    background-color: white;*/
+/*    font: inherit;*/
+/*    padding: 4px 6px;*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*    height: 60%;*/
+/*    !*box-sizing: border-box;*!*/
+/*    border-radius: 4px;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+
+
+/*}*/
+
+/*!*.locationSearchInput,*!*/
+/*!*.locationSearchInput:focus,*!*/
+/*!*.locationSearchInput:active {*!*/
+/*!*    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);*!*/
+/*!*    border: honeydew;*!*/
+/*!*    !*display: block;*!*!*/
+/*!*    !*width: 100%;*!*!*/
+/*!*    !*padding: 16px;*!*!*/
+/*!*    !*font-size: 16px;*!*!*/
+/*!*    !*border-radius: 2px;*!*!*/
+/*!*    !*outline: none;*!*!*/
+/*!*}*!*/
+
+/*.inputSuggestion{*/
+/*    !*font-family: 'Lato', sans-serif;*!*/
+/*    !*width: 500px;*!*/
+/*    !*height: 20px;*!*/
+/*    !*background-color: white;*!*/
+/*    !*border-bottom: 1px black dotted;*!*/
+/*    !*display: flex;*!*/
+/*    !*align-items: center;*!*/
+/*    !*font-size: 10rem;*!*/
+/*    !*font-weight: bold;*!*/
+/*    color: black;*/
+/*    !*margin-left: 5rem;*!*/
+/*}*/

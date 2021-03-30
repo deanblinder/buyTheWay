@@ -237,8 +237,8 @@ class ProfilePage extends Component{
                         </div>
 
                     </div>
-                    <div>
-                        <Button variant="primary">Edit profile</Button>
+                    <div style={{marginLeft:'47%',marginTop:'2%'}}>
+                        {/*<Button variant="primary">Edit profile</Button>*/}
                         {button2}
                     </div>
                 </div>

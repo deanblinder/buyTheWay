@@ -61,11 +61,12 @@ export class MapContainer extends Component {
         this.setState({place:copiedPlace})
     }
     render() {
+        const google_key = process.env.REACT_APP_GOOGLE_API_KEY;
         return (
             <div>
                 <div style={{backgroundColor:'white'}}>
-                    <GoogleAutoComplete></GoogleAutoComplete>
-                {/*<GoogleComponent coordinates={true} apiKey={"AIzaSyAM5tW6wSb8nkF-Qb2S5ZGgxDD6P-jEhbg"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>*/}
+                    {/*<GoogleAutoComplete></GoogleAutoComplete>*/}
+                <GoogleComponent coordinates={true} apiKey={google_key} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
                 </div>
             <Map center={{lat: this.state.place.coordinates.lat,lng:this.state.place.coordinates.lng}} initialCenter={{lat: this.state.place.coordinates.lat, lng: this.state.place.coordinates.lng}} google={this.props.google} zoom={14}>
                 {this.state.markers.map((marker, i) => {
@@ -127,7 +128,13 @@ export class MapContainer extends Component {
         );
     }
 }
+// export default GoogleApiWrapper(
+//     (props) => ({
+//             apiKey: props.apiKey
+//         }
+//     ))(MapContainer)
 
 export default GoogleApiWrapper({
-    apiKey: ("AIzaSyAM5tW6wSb8nkF-Qb2S5ZGgxDD6P-jEhbg")
+
+    apiKey: process.env.REACT_APP_GOOGLE_API_KEY
 })(MapContainer)

@@ -1,13 +1,13 @@
 import React, {Component} from "react";
 import {Button, Form,InputGroup,FormControl} from "react-bootstrap";
 import './OrderForm.css'
-import GoogleAutoComplete from '../GoogleAutoComplete/GoogleAutoComplete'
+// import GoogleAutoComplete from '../GoogleAutoComplete/GoogleAutoComplete'
 import axios from 'axios'
-import firebase from 'firebase'
-import {storage} from "../firebaseConfig";
+// import firebase from 'firebase'
+// import {storage} from "../firebaseConfig";
 // import image from "react-firebase-file-uploader/lib/utils/image";
-import avatar from '../../assets/avatar.jpg'
-import image from "react-firebase-file-uploader/lib/utils/image";
+// import avatar from '../../assets/avatar.jpg'
+// import image from "react-firebase-file-uploader/lib/utils/image";
 import { GoogleComponent } from 'react-google-location'
 
 // import FileUploader from 'react-firebase-file-uploader'
@@ -169,6 +169,7 @@ class OrderForm extends Component{
     // }
 
     render() {
+        const google_key = process.env.REACT_APP_GOOGLE_API_KEY;
         return(
             <div className="OrderForm">
                 <Form>
@@ -236,7 +237,7 @@ class OrderForm extends Component{
                             <div className='Heading'>address:</div>
                             <div style={{backgroundColor:'white'}}>
                                 {/*<GoogleAutoComplete></GoogleAutoComplete>*/}
-                                <GoogleComponent language={'iw'} coordinates={true} apiKey={"AIzaSyBRpBf8IvQe7mDA4buTgraHSYquHlzf0n4"} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
+                                <GoogleComponent language={'iw'} coordinates={true} apiKey={google_key} onChange={(e) => { this.setState({ place: e }) }}/>
                             </div>
                         </Form.Group>
                     </Form.Group>

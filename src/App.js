@@ -27,7 +27,6 @@ class App extends Component {
             <Layout>
                 <Switch>
                     <Route exect path='/OrderForm' component={OrderForm}/>
-
                     <Route exact path='/auth/register' component={Register}/>
                     <Route exect path='/auth/login' component={Login}/>
                     <Route exect path='/profilePage'component={ProfilePage}/>
