@@ -11,7 +11,6 @@ class Login extends Component{
         password:{
             value:''
         },
-        // isLoggedIn:false
     }
     orderHandler=(event)=>{
         event.preventDefault();//prevent send a request
@@ -46,7 +45,6 @@ class Login extends Component{
 
                 }
             })
-
     }
     usernameChangedHandler=(event)=>{
         let updatedElement={
@@ -64,7 +62,6 @@ class Login extends Component{
     }
     render() {
         return(
-                    // <div className='Container'>
                     <div className='LoginForm' >
                         <h1 style={{textAlign:"center"}}>Login</h1>
                         <Form >
@@ -87,7 +84,6 @@ class Login extends Component{
                                     Submit
                                 </Button>
                         </Form>
-                    {/*</div>*/}
                     </div>
 
 

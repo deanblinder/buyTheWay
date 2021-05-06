@@ -1,17 +1,8 @@
 import React, {Component} from "react";
 import {Button, Form,InputGroup,FormControl} from "react-bootstrap";
 import './OrderForm.css'
-// import GoogleAutoComplete from '../GoogleAutoComplete/GoogleAutoComplete'
 import axios from 'axios'
-// import firebase from 'firebase'
-// import {storage} from "../firebaseConfig";
-// import image from "react-firebase-file-uploader/lib/utils/image";
-// import avatar from '../../assets/avatar.jpg'
-// import image from "react-firebase-file-uploader/lib/utils/image";
-import { GoogleComponent } from 'react-google-location'
-
-// import FileUploader from 'react-firebase-file-uploader'
-
+import PlacesAutocomplete from "../autoComplete/AutoComplete";
 
 class OrderForm extends Component{
     state={
@@ -21,8 +12,8 @@ class OrderForm extends Component{
         reason:'isolate',
         items:[""],
         comment:'',
-        // myLat:'',
-        // myLng:'',
+        myLat:'',
+        myLng:'',
         place:'',
         address:'',
         image:null,
@@ -52,7 +43,6 @@ class OrderForm extends Component{
          let copiedItems=this.state.items
          copiedItems.push('')
          this.setState({items:copiedItems})
-        // this.setState(prevState => ({ items: [...prevState.items, '']}))
         console.log(this.state.items)
     }
     removeItems=(groceryId)=>{
@@ -125,6 +115,7 @@ class OrderForm extends Component{
     handleOrder=(event)=>{
         event.preventDefault();
         console.log("jdjdj")
+        console.log(this.state.place,'place')
         let order={
             username:localStorage.getItem('username'),
             firstName: this.state.firstName,
@@ -134,14 +125,13 @@ class OrderForm extends Component{
             items:this.state.items,
             comment:this.state.comment,
             address:this.state.place.place,
-            lat:this.state.place.coordinates.lat,
-            lng:this.state.place.coordinates.lng,
+            lat:this.state.myLat,
+            lng:this.state.myLng,
             // place:this.state.place.coordinates.
             imageURL:this.state.image
 
          }
         console.log(order)
-
         axios.post("https://buy-the-way-a829f.firebaseio.com/orders.json",order).then(
             response=>{
                 console.log(localStorage.getItem('username'))
@@ -150,27 +140,22 @@ class OrderForm extends Component{
             }
         )
     }
-    changeLanLngHandler=(lat,lng,address)=>{
-        this.setState({myLat:lat,myLng:lng,address:address})
-        console.log(this.state.myLat,this.state.myLng,this.state.address,'dean')
+    changeVal=(address)=>{
+        console.log(address,'sdkjsds')
+
     }
-    // changeImageHandler=(e)=>{
-    //     const file=e.target.files[0];
-    //     if(file){
-    //         const fileType= file["type"]
-    //         const validImageTypes=['image/gif','image/jpeg','image/png']
-    //         if(validImageTypes.includes(fileType)){
-    //             this.setState({image:file})
-    //         }
-    //         else{
-    //             alert("Image type is not good")
-    //         }
-    //     }
-    // }
+    handleLatLang = (latLang,myAddres)=>{
+        console.log(myAddres)
+        this.setState({myLat:latLang.lat,myLng:latLang.lng,addres:myAddres})
+    }
 
     render() {
+
         const google_key = process.env.REACT_APP_GOOGLE_API_KEY;
+
+
         return(
+
             <div className="OrderForm">
                 <Form>
                     <Form.Group controlId="formBasicEmail">
@@ -235,17 +220,18 @@ class OrderForm extends Component{
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
                             <div className='Heading'>address:</div>
-                            <div style={{backgroundColor:'white'}}>
-                                {/*<GoogleAutoComplete></GoogleAutoComplete>*/}
-                                <GoogleComponent language={'iw'} coordinates={true} apiKey={google_key} onChange={(e) => { this.setState({ place: e }) }}/>
+                            <div style={{backgroundColor:'white',width:'100%'}}>
+                                {/*<PlacesAutocomplete style={{}} onSelect={(e) => { this.setState({ place: e })}}/>*/}
+
+                                <PlacesAutocomplete setLatLang={this.handleLatLang} onSelect={this.handleChange}/>
                             </div>
                         </Form.Group>
                     </Form.Group>
-                        {/*<Button variant="primary"*/}
-                        {/*        type="submit"*/}
-                        {/*        onClick={this.handleOrder}>*/}
-                        {/*    Submit*/}
-                        {/*</Button>*/}
+                        <Button variant="primary"
+                                type="submit"
+                                onClick={this.handleOrder}>
+                            Submit
+                        </Button>
                 </Form>
             </div>
         )

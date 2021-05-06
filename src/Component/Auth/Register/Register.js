@@ -5,7 +5,6 @@ import axios from 'axios'
 import Login from '../../../Component/Auth/Login/Login'
 import {Link} from "react-router-dom";
 class Register extends Component{
-
     state={
         username:{
             value:''
@@ -16,7 +15,6 @@ class Register extends Component{
         password:{
             value:''
         }
-
     }
     orderHandler=(event)=>{
         event.preventDefault();//prevent send a request
@@ -26,7 +24,6 @@ class Register extends Component{
             email: this.state.email.value,
             password: this.state.password.value,
             profilePic:"https://p1.hiclipart.com/preview/823/765/288/login-icon-system-administrator-user-user-profile-icon-design-avatar-face-head-png-clipart.jpg"
-           // returnSecureToken:true
         }
         axios.get('https://buy-the-way-a829f.firebaseio.com/users.json')
             .then(response=>{
@@ -43,7 +40,6 @@ class Register extends Component{
                     alert('User already exist')
                 }
                 else {
-                    //console.log(userData)
                     axios.post('https://buy-the-way-a829f.firebaseio.com/users.json',userData)
                         .then(response=>{
                             console.log(response)
@@ -53,11 +49,8 @@ class Register extends Component{
                         }).catch(error=>{
                         console.log(error)
                     })
-
-
                 }
             })
-
     }
     usernameChangedHandler=(event)=>{
         let updatedElement={
@@ -79,10 +72,7 @@ class Register extends Component{
         }
         updatedElement.value=event.target.value;
         this.setState({password:updatedElement});
-        // console.log(this.state.password)
     }
-
-
     render() {
         return(
             <div className='RegisterForm1' >
@@ -128,10 +118,8 @@ class Register extends Component{
                             </Col>
                         </Form.Row>
                 </Form>
-
             </div>
         )
     }
-
 }
 export default Register

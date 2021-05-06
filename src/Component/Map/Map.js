@@ -1,12 +1,8 @@
-import { GoogleComponent } from 'react-google-location'
 import Order from '../Orders/Order/Order'
 import axios from 'axios'
 import React,{Component} from "react";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import icon from '../../assets/mapIcon.jpg'
-import GoogleAutoComplete from '../../Component/GoogleAutoComplete/GoogleAutoComplete'
-
-
 
 export class MapContainer extends Component {
     state = {
@@ -48,7 +44,7 @@ export class MapContainer extends Component {
             })
         axios.get("gs://buy-the-way-a829f.appspot.com")
             .then(response=>{
-                // console.log(response, 'photo')
+
             })
     }
     markerClick=(marker)=>{
@@ -64,13 +60,9 @@ export class MapContainer extends Component {
         const google_key = process.env.REACT_APP_GOOGLE_API_KEY;
         return (
             <div>
-                <div style={{backgroundColor:'white'}}>
-                    {/*<GoogleAutoComplete></GoogleAutoComplete>*/}
-                <GoogleComponent coordinates={true} apiKey={google_key} onChange={(e) => { this.setState({ place: e }) }}></GoogleComponent>
-                </div>
+                <div style={{backgroundColor:'white'}}/>
             <Map center={{lat: this.state.place.coordinates.lat,lng:this.state.place.coordinates.lng}} initialCenter={{lat: this.state.place.coordinates.lat, lng: this.state.place.coordinates.lng}} google={this.props.google} zoom={14}>
                 {this.state.markers.map((marker, i) => {
-                    // console.log(localStorage.getItem('username'),marker.username)
                     return marker.username === localStorage.getItem('username') ?
                         <Marker
                             key={i}
@@ -91,18 +83,12 @@ export class MapContainer extends Component {
                                 lng: marker.lng,
                             }}
                             onClick={()=>this.markerClick(marker)}
-                            // icon={{
-                            //     url:icon,
-                            //     scaledSize: new window.google.maps.Size(25,25)
-                            // }}
-
                         />
                 })}
                     {this.state.selectedMark && (
                         <InfoWindow
                             onClose={() => {
                                  this.setState({selectedMark: null});
-                                // console.log(this.state.selectedMark)
                             }}
                             position={{
                                 lat:( this.state.selectedMark.lat),
@@ -128,12 +114,6 @@ export class MapContainer extends Component {
         );
     }
 }
-// export default GoogleApiWrapper(
-//     (props) => ({
-//             apiKey: props.apiKey
-//         }
-//     ))(MapContainer)
-
 export default GoogleApiWrapper({
 
     apiKey: process.env.REACT_APP_GOOGLE_API_KEY

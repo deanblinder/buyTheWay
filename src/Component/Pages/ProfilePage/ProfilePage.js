@@ -3,7 +3,6 @@ import {Container, Col,Row,Image,Card,Button} from 'react-bootstrap'
 import 'semantic-ui-css/semantic.min.css'
 import OrderCard from '../../Card/Card'
 import axios from 'axios'
-// import cover from '../../../assets/cover.jpg'
 import cover from '../../../assets/emptyImg.jpg'
 import firebase from "firebase";
 import ReactRoundedImage from "react-rounded-image";
@@ -55,13 +54,8 @@ class ProfilePage extends Component{
     goToOrderForm=()=>{
         this.props.history.push('/OrderForm')
     }
-    updateUserOrder=()=>{
-        // firebase.database().ref('users/' + userId).set({
-        //     name:
-        //     profile_picture : imageUrl
-        // });
-    }
     removeOrder=()=>{
+
         let firebaseConfig = {
             apiKey: "AIzaSyBhjnNRBDpLdxhRwXRbiPUohAQTudP33KA",
             authDomain: "buy-the-way-a829f.firebaseapp.com",
@@ -92,6 +86,7 @@ class ProfilePage extends Component{
                 }
                 // window.location.reload(false);
             })
+        this.setState({order:null,hasRequest:false})
     }
     changeCoverPicHandler=(e)=>{
         const file=e.target.files[0];
@@ -238,7 +233,6 @@ class ProfilePage extends Component{
 
                     </div>
                     <div style={{marginLeft:'47%',marginTop:'2%'}}>
-                        {/*<Button variant="primary">Edit profile</Button>*/}
                         {button2}
                     </div>
                 </div>
