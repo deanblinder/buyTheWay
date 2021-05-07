@@ -124,7 +124,7 @@ class OrderForm extends Component{
             reason:this.state.reason,
             items:this.state.items,
             comment:this.state.comment,
-            address:this.state.place.place,
+            address:this.state.address,
             lat:this.state.myLat,
             lng:this.state.myLng,
             // place:this.state.place.coordinates.
@@ -146,7 +146,7 @@ class OrderForm extends Component{
     }
     handleLatLang = (latLang,myAddres)=>{
         console.log(myAddres)
-        this.setState({myLat:latLang.lat,myLng:latLang.lng,addres:myAddres})
+        this.setState({myLat:latLang.lat,myLng:latLang.lng,address:myAddres})
     }
 
     render() {

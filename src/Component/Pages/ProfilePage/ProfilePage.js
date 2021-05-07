@@ -119,7 +119,6 @@ class ProfilePage extends Component{
                                         }
                                     });
                                 }
-
                             }
                         })
                 })
@@ -171,12 +170,12 @@ class ProfilePage extends Component{
         }
     }
     render() {
-        let button2=null
+        let activeOrder=null
         let fullName='FirstName LastName'
         if(this.state.hasRequest){
             console.log(this.state.order)
             fullName=<h1>{this.state.order.firstName.value+" "+this.state.order.lastName.value}</h1>
-             button2= <div style={{marginLeft:"10%",zIndex:'1'}}>
+             activeOrder= <div style={{marginLeft:"10%",zIndex:'1'}}>
                  <OrderCard
                      address={this.state.order.address}
                      groceries={this.state.order.items}
@@ -186,7 +185,7 @@ class ProfilePage extends Component{
         }
         else{
 
-                button2= <Button  variant="primary" onClick={this.goToOrderForm}>Enter request</Button>
+                activeOrder= <Button  variant="primary" onClick={this.goToOrderForm}>Enter request</Button>
 
         }
         return(
@@ -232,8 +231,8 @@ class ProfilePage extends Component{
                         </div>
 
                     </div>
-                    <div style={{marginLeft:'47%',marginTop:'2%'}}>
-                        {button2}
+                    <div>
+                        {activeOrder}
                     </div>
                 </div>
             </div>

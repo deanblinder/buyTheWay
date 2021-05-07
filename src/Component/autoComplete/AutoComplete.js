@@ -14,10 +14,11 @@ class LocationSearchInput extends React.Component {
         this.setState({ address });
     };
     handleSelect = address => {
+        this.setState({address:address})
         geocodeByAddress(address)
             .then(results => getLatLng(results[0]))
             .then(latLng => this.props.setLatLang(latLng,this.state.address))
-            // .then(latLng => console.log('Success', latLng))
+            // .then(latLng => console.log('Success', results))
             .catch(error => console.error('Error', error));
     };
     render() {
@@ -29,7 +30,7 @@ class LocationSearchInput extends React.Component {
             >
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                     <div>
-                        <input
+                        <input style={{width:'100%',border:'solid',borderWidth:'1px',height:'30px',borderRadius:'1%',borderColor:"grey"}}
                             {...getInputProps({
                                 placeholder: 'Search Places ...',
                                 className: 'location-search-input',
